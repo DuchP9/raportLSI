@@ -21,6 +21,7 @@ object dmMain: TdmMain
   object qryDane: TADOQuery
     Connection = adoCon
     CursorType = ctStatic
+    OnCalcFields = qryDaneCalcFields
     Parameters = <
       item
         Name = 'LocationName'
@@ -57,6 +58,7 @@ object dmMain: TdmMain
     end
     object qryDaneExportDateTime: TDateTimeField
       FieldName = 'ExportDateTime'
+      DisplayFormat = 'yyyy-mm-dd'
     end
     object qryDaneUserName: TWideStringField
       FieldName = 'UserName'
@@ -65,6 +67,12 @@ object dmMain: TdmMain
     object qryDaneLocationName: TWideStringField
       FieldName = 'LocationName'
       Size = 150
+    end
+    object qryDanecTime: TDateField
+      FieldKind = fkCalculated
+      FieldName = 'cTime'
+      DisplayFormat = 'hh:nn'
+      Calculated = True
     end
   end
   object qryLokal: TADOQuery

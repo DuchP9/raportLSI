@@ -29,8 +29,6 @@ object fMain: TfMain
       Height = 543
       Align = alClient
       TabOrder = 0
-      ExplicitLeft = 197
-      ExplicitTop = 2
       object cxGrid1DBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = dmMain.dsDane
@@ -45,7 +43,12 @@ object fMain: TfMain
         object cxGrid1DBTableView1ExportDateTime: TcxGridDBColumn
           Caption = 'Data'
           DataBinding.FieldName = 'ExportDateTime'
-          Width = 150
+          Width = 120
+        end
+        object cxGrid1DBTableView1cTime: TcxGridDBColumn
+          Caption = 'Godzina'
+          DataBinding.FieldName = 'cTime'
+          Width = 120
         end
         object cxGrid1DBTableView1UserName: TcxGridDBColumn
           Caption = 'U'#380'ytkownik'

@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Phys.MSAccDef,
-  FireDAC.Phys.ODBCBase, FireDAC.Phys.MSAcc, Data.Win.ADODB;
+  FireDAC.Phys.ODBCBase, FireDAC.Phys.MSAcc, Data.Win.ADODB, System.DateUtils;
 
 type
   TdmMain = class(TDataModule)
@@ -23,6 +23,8 @@ type
     qryLokal: TADOQuery;
     qryLokalLocationName: TWideStringField;
     dsLokal: TDataSource;
+    qryDanecTime: TDateField;
+    procedure qryDaneCalcFields(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -37,5 +39,10 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TdmMain.qryDaneCalcFields(DataSet: TDataSet);
+begin
+  qryDane.FieldByName('cTime').AsDateTime := qryDane.FieldByName('ExportDateTime').AsDateTime;
+end;
 
 end.

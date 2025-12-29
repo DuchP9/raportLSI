@@ -56,6 +56,7 @@ type
     dxLayoutItem5: TdxLayoutItem;
     dxLayoutItem6: TdxLayoutItem;
     lData: TcxLabel;
+    cxGrid1DBTableView1cTime: TcxGridDBColumn;
     procedure btZatwierdzClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
