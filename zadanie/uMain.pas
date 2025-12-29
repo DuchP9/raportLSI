@@ -28,7 +28,7 @@ uses
   dxLayoutControl, cxTextEdit, cxMaskEdit, cxGridLevel, cxClasses,
   cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
   cxGrid, Vcl.ExtCtrls, System.DateUtils, cxDBEdit, cxLookupEdit,
-  cxDBLookupEdit, cxDBLookupComboBox;
+  cxDBLookupEdit, cxDBLookupComboBox, cxLabel;
 
 type
   TfMain = class(TForm)
@@ -51,6 +51,11 @@ type
     cxGrid1DBTableView1UserName: TcxGridDBColumn;
     cxGrid1DBTableView1LocationName: TcxGridDBColumn;
     lcbLokal: TcxLookupComboBox;
+    lLokal: TcxLabel;
+    dxLayoutGroup2: TdxLayoutGroup;
+    dxLayoutItem5: TdxLayoutItem;
+    dxLayoutItem6: TdxLayoutItem;
+    lData: TcxLabel;
     procedure btZatwierdzClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -108,6 +113,7 @@ begin
 
     Open;
   end;
+
 end;
 
 procedure TfMain.FormShow(Sender: TObject);

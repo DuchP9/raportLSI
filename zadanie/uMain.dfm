@@ -29,6 +29,8 @@ object fMain: TfMain
       Height = 543
       Align = alClient
       TabOrder = 0
+      ExplicitLeft = 197
+      ExplicitTop = 2
       object cxGrid1DBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = dmMain.dsDane
@@ -69,25 +71,25 @@ object fMain: TfMain
       TabOrder = 1
       object dDataOd: TcxDateEdit
         Left = 10
-        Top = 37
+        Top = 83
         Style.BorderColor = clWindowFrame
         Style.BorderStyle = ebs3D
         Style.HotTrack = False
         Style.ButtonStyle = bts3D
         Style.PopupBorderStyle = epbsFrame3D
-        TabOrder = 1
+        TabOrder = 3
         TextHint = 'Od:'
         Width = 180
       end
       object dDataDo: TcxDateEdit
         Left = 10
-        Top = 64
+        Top = 110
         Style.BorderColor = clWindowFrame
         Style.BorderStyle = ebs3D
         Style.HotTrack = False
         Style.ButtonStyle = bts3D
         Style.PopupBorderStyle = epbsFrame3D
-        TabOrder = 2
+        TabOrder = 4
         TextHint = 'Do:'
         Width = 180
       end
@@ -97,25 +99,40 @@ object fMain: TfMain
         Width = 75
         Height = 25
         Caption = 'Zatwierd'#378
-        TabOrder = 3
+        TabOrder = 5
         OnClick = btZatwierdzClick
       end
       object lcbLokal: TcxLookupComboBox
         Left = 10
-        Top = 10
+        Top = 33
+        Hint = 'Lokal'
+        ParentShowHint = False
         Properties.KeyFieldNames = 'LocationName'
         Properties.ListColumns = <
           item
             FieldName = 'LocationName'
           end>
         Properties.ListSource = dmMain.dsLokal
+        ShowHint = True
         Style.BorderColor = clWindowFrame
         Style.BorderStyle = ebs3D
         Style.HotTrack = False
         Style.ButtonStyle = bts3D
         Style.PopupBorderStyle = epbsFrame3D
-        TabOrder = 0
+        TabOrder = 1
         Width = 180
+      end
+      object lLokal: TcxLabel
+        Left = 10
+        Top = 10
+        Caption = 'Lokal:'
+        Style.HotTrack = False
+      end
+      object lData: TcxLabel
+        Left = 10
+        Top = 60
+        Caption = 'Data:'
+        Style.HotTrack = False
       end
       object dxLayoutControl1Group_Root: TdxLayoutGroup
         AlignHorz = ahParentManaged
@@ -131,17 +148,15 @@ object fMain: TfMain
         CaptionOptions.Text = 'New Group'
         ButtonOptions.Buttons = <>
         ShowBorder = False
-        Index = 0
+        Index = 1
       end
       object dxLayoutItem1: TdxLayoutItem
-        Parent = dxLayoutGroup1
-        AlignHorz = ahClient
-        AlignVert = avClient
+        Parent = dxLayoutGroup2
         Control = lcbLokal
         ControlOptions.OriginalHeight = 21
         ControlOptions.OriginalWidth = 73
         ControlOptions.ShowBorder = False
-        Index = 0
+        Index = 1
       end
       object dxLayoutItem2: TdxLayoutItem
         Parent = dxLayoutGroup1
@@ -169,7 +184,34 @@ object fMain: TfMain
         ControlOptions.OriginalHeight = 25
         ControlOptions.OriginalWidth = 75
         ControlOptions.ShowBorder = False
-        Index = 1
+        Index = 2
+      end
+      object dxLayoutGroup2: TdxLayoutGroup
+        Parent = dxLayoutControl1Group_Root
+        CaptionOptions.Text = 'New Group'
+        ButtonOptions.Buttons = <>
+        ShowBorder = False
+        Index = 0
+      end
+      object dxLayoutItem5: TdxLayoutItem
+        Parent = dxLayoutGroup2
+        CaptionOptions.Text = 'New Item'
+        CaptionOptions.Visible = False
+        Control = lLokal
+        ControlOptions.OriginalHeight = 17
+        ControlOptions.OriginalWidth = 46
+        ControlOptions.ShowBorder = False
+        Index = 0
+      end
+      object dxLayoutItem6: TdxLayoutItem
+        Parent = dxLayoutGroup1
+        CaptionOptions.Text = 'New Item'
+        CaptionOptions.Visible = False
+        Control = lData
+        ControlOptions.OriginalHeight = 17
+        ControlOptions.OriginalWidth = 46
+        ControlOptions.ShowBorder = False
+        Index = 0
       end
     end
   end
