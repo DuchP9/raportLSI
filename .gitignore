@@ -13,7 +13,6 @@
 *.dylib
 *.a
 *.lib
-*.exe
 *.bpl
 *.dcp
 *.drc
